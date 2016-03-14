@@ -1,4 +1,4 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>IOI-Camp Flow</title><meta name="description" content="A framework for easily creating beautiful presentations using HTML"><meta name="author" content="Hakim El Hattab"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"><link rel="stylesheet" href="reveal/css/reveal.css"><link rel="stylesheet" href="reveal/css/theme/black.css" id="theme"><link rel="stylesheet" href="css/style.css"><!-- Code syntax highlighting -->
+<!DOCTYPE html><html><head><meta charset="utf-8"><title>reveal.js教學示範</title><meta name="description" content="A framework for easily creating beautiful presentations using HTML"><meta name="author" content="Hakim El Hattab"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"><link rel="stylesheet" href="reveal/css/reveal.css"><link rel="stylesheet" href="reveal/css/theme/black.css" id="theme"><link rel="stylesheet" href="css/style.css"><!-- Code syntax highlighting -->
 <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
 <!-- Printing and PDF exports --><script>var link = document.createElement( 'link' );
 link.rel = 'stylesheet';
@@ -13,21 +13,40 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
   \newcommand{\opord}{\operatorname{\mathcal{O}}}
   \newcommand{\argmax}{\operatorname{arg\,max}}
   \newcommand{\str}[1]{\texttt{"#1"}}
-\)<section><h1>Flow</h1><p><div class="small">Created by Meteor</div></p></section><section><!DOCTYPE html><section data-markdown><script type="text/template">## 大綱
-* 流的定義
-* 最大流演算法
-  - FF
-  - EK
-  - Dinic
-* 最大流問題建模
-* 最小割問題建模
-* 最小花費最大流演算法
-* 最小花費最大流建模
-</script></section><!DOCTYPE html><section data-markdown><script type="text/template">## 如果有時間的話
-* Misc
-* 線性規劃
-* 趣題選講
-</script></section><!DOCTYPE html><section><h2>圖論關鍵</h2><ul><li class="fragment">知識 - 多記結論</li><li class="fragment">應變 - 臨場發揮</li><li class="fragment">拿紙出來用力畫啊</li></ul></section></section><section><!DOCTYPE html><section><h1>Maximum Flow</h1></section></section><section><!DOCTYPE html><section><h1>Definition</h1></section><!DOCTYPE html><section><h2>可行流</h2><p>想像一下…</p><ul><li class="fragment">有水流通過的水管</li><li class="fragment">公路的車流</li><li class="fragment">網路</li><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul><li>水管：輸送自來水到你家</li><li>水流：從山上下來，洪水</li><li>公路：車子走高速公路</li><li>網路：送封包。</li></ul></script></aside></ul></section><!DOCTYPE html><section><p>這些東西都有這些特性</p><ul><li class="fragment">有流的上限</li><li class="fragment">不能囤積</li><li class="fragment">通常會有起點和終點。</li><li class="fragment">而我們會希望能傳輸越多越好！</li><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul><li>流的上限：河流暴漲 公路塞車 網速</li><li>不能囤：否則淹水 連環車禍 大家按F5</li><li>s/t: 山上流到山下 過年返鄉</li><li>越多：木冊線。</li></ul></script></aside></ul></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div>流量網路<hr>一個<b>s-t 網路流</b>是<ul><li class="fragment">一張圖 \( G = (V, E) \)</li><li class="fragment">每條邊上有一個非負的權重 \( c(u, v) \geq 0 \) 代表邊的流量上限 </li><li class="fragment">並且有二個特別的點， 源點 \( s \) 與 匯點 \( t \) 。</li></ul></div><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul> <li>來正式定義何謂 s-t cut</li><li>當然是一張圖</li><li>流量上限</li><li>起/終點</li></ul></script></aside></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div>可行流的定義<hr>一個<b> s-t 可行流</b>是一個函數 \( f : V \times V \mapsto \mathbb{R} \) 滿足以下兩個條件<ul><br><li class="fragment">流量限制 : 
+\)
+<!-- ... 這裡是註解文字 ... -->
+<!-- ... 上面那邊基本上看不懂沒關係，有看到"reveal.js教學示範"嗎?那邊是網頁的標籤 ... -->
+<!-- ... 只要會複製貼上就好了 ... -->
+<section><h1>reveal.js教學</h1><p><div class="small">南天門日月卦長</div></p></section>
+<section><!DOCTYPE html>
+    <section data-markdown><script type="text/template">
+        ## 大綱
+        * 基礎
+          - 複製別人的
+          - 修改別人的
+          - 完成
+        * 加東西
+          - section
+          - 加code
+          - 加圖片
+    </script></section><!DOCTYPE html>
+    <section data-markdown><script type="text/template">
+        ## 如果有時間的話
+        * Music 金坷垃
+    </script></section><!DOCTYPE html>
+    <section data-markdown><script type="text/template">
+        寫個 ``code``
+        ``` cpp
+        int a;
+        for(int i=0;i<10;++i)
+            a+=5;
+        //放code的地方
+        ```
+    </script></section><!DOCTYPE html>
+    <section><h2>如果你很熟html的話</h2><ul><li class="fragment">就可以</li><li class="fragment">像這樣</li><li class="fragment">輸出文字</li></ul></section>
+</section>
+<section><!DOCTYPE html><section><h1>基礎</h1></section></section>
+<section><!DOCTYPE html><section><h1>Definition</h1></section><!DOCTYPE html><section><h2>可行流</h2><p>想像一下…</p><ul><li class="fragment">有水流通過的水管</li><li class="fragment">公路的車流</li><li class="fragment">網路</li><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul><li>水管：輸送自來水到你家</li><li>水流：從山上下來，洪水</li><li>公路：車子走高速公路</li><li>網路：送封包。</li></ul></script></aside></ul></section><!DOCTYPE html><section><p>這些東西都有這些特性</p><ul><li class="fragment">有流的上限</li><li class="fragment">不能囤積</li><li class="fragment">通常會有起點和終點。</li><li class="fragment">而我們會希望能傳輸越多越好！</li><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul><li>流的上限：河流暴漲 公路塞車 網速</li><li>不能囤：否則淹水 連環車禍 大家按F5</li><li>s/t: 山上流到山下 過年返鄉</li><li>越多：木冊線。</li></ul></script></aside></ul></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div>流量網路<hr>一個<b>s-t 網路流</b>是<ul><li class="fragment">一張圖 \( G = (V, E) \)</li><li class="fragment">每條邊上有一個非負的權重 \( c(u, v) \geq 0 \) 代表邊的流量上限 </li><li class="fragment">並且有二個特別的點， 源點 \( s \) 與 匯點 \( t \) 。</li></ul></div><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul> <li>來正式定義何謂 s-t cut</li><li>當然是一張圖</li><li>流量上限</li><li>起/終點</li></ul></script></aside></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div>可行流的定義<hr>一個<b> s-t 可行流</b>是一個函數 \( f : V \times V \mapsto \mathbb{R} \) 滿足以下兩個條件<ul><br><li class="fragment">流量限制 : 
 \( f(u, v) \leq c(u, v), \; \forall (u, v) \)<br><br></li><li class="fragment">流量對稱 : 
 \( f(u, v) = -f(v, u), \; \forall (u, v)\)<br><br></li><li class="fragment">流量守衡 : 
 對於所有 \( v \in V \setminus \{s, t\} \) ， 
@@ -313,7 +332,9 @@ sum 1 = 選 v 不選 u 就 1 cost
 </div><div class="blackboard"></div></section><!DOCTYPE html><section><p>如果有一個路徑 \( v_1 \to v_2 \to v_3 \cdots \)</p>就是 \( \texttt{next}(v_1) = v_2, \texttt{next}(v_2) = v_3 \)<p class="fragment">匹配！</p><div class="blackboard"></div></section><!DOCTYPE html><section><div class="prob"><div class="label">例題</div>下界流<hr>現在網路流上的每個邊不只有流量上限 \( c^+(u, v) \)，還有
 流量下界 \( c^-(u, v) \)，求一個合法的流(不需最大)。
 </div><div class="blackboard"></div></section><!DOCTYPE html><section><p class="fragment">不如先補滿下界。</p><p class="fragment">但有些點的流量就不守恆了，進來的跟出來的差了 \( \delta(v) \)。</p><p class="fragment">有沒有想到混合圖的歐拉回路那一題！</p><div class="blackboard"></div></section><!DOCTYPE html><section><h2>一些和匹配相關的問題</h2><ul><li class="space-bottom fragment">最大獨立點集：一個最大的點集 \( V' \) 使得裡面的點都不相鄰。其大小記做 \( I(G) \)。</li><li class="space-bottom fragment">最大匹配數：前面定義過了。其大小記做 \( M(G) \)。</li><li class="space-bottom fragment">最小點覆蓋：最小的一個點集，使得所有的邊都至少與點集裡的一個點相鄰。其大小記做 \( C_v(G) \)。</li><li class="space-bottom fragment">最小邊覆蓋：最小的一個邊集，使得所有的點都至少與邊集裡的
-一個邊相鄰。其大小記做 \( C_e(G) \)。</li></ul><aside class="notes"><ul> <li>互不衝突的點。</li><li>很像壓紙。</li></ul></aside></section><!DOCTYPE html><section><div class="space-right inline-block x3"><img src="img/misc/match_probs-0.svg">獨立點集</div><div class="space-right inline-block x3"><img src="img/misc/match_probs-1.svg">點覆蓋</div><div class="space-right inline-block x3"><img src="img/misc/match_probs-2.svg">邊覆蓋</div></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div><hr><ul><li>\( I(G) + C_v(G) = \abs{V} \). </li><li>\( M(G) + C_e(G) = \abs{V} \).</li><li>對連通二分圖，有 \( M(G) = C_v(G), I(G) = C_e(G) \).</li></ul></div><div class="blackboard"></div><aside class="notes"><ul> <li>點覆蓋的補集就是獨立點集。</li><li>先找一個最大匹配，補成邊覆蓋。 M + M + V - 2M = V</li></ul></aside></section><!DOCTYPE html><section><h3>二分圖的特性</h3><p>\( M(G) = C_v(G) \)</p><p class="fragment">把點覆蓋轉成 min-cut ！</p><p class="fragment">很不一樣的是這次在 s 表示 (v in X and 不選 v) or (v in Y and 選 v)</p><div class="blackboard"></div><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">從構造的思路開始，要 u -> v 不能同時不選 = 不選 v 就要選 u</script></aside></section></section></div></div><script src="js/jquery.js"></script><script src="reveal/lib/js/head.min.js"></script><script src="reveal/js/reveal.js"></script><script src="js/sketch.min.js"></script><script>// Full list of configuration options available at:
+一個邊相鄰。其大小記做 \( C_e(G) \)。</li></ul><aside class="notes"><ul> <li>互不衝突的點。</li><li>很像壓紙。</li></ul></aside></section><!DOCTYPE html><section><div class="space-right inline-block x3"><img src="img/misc/match_probs-0.svg">獨立點集</div><div class="space-right inline-block x3"><img src="img/misc/match_probs-1.svg">點覆蓋</div><div class="space-right inline-block x3"><img src="img/misc/match_probs-2.svg">邊覆蓋</div></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div><hr><ul><li>\( I(G) + C_v(G) = \abs{V} \). </li><li>\( M(G) + C_e(G) = \abs{V} \).</li><li>對連通二分圖，有 \( M(G) = C_v(G), I(G) = C_e(G) \).</li></ul></div><div class="blackboard"></div><aside class="notes"><ul> <li>點覆蓋的補集就是獨立點集。</li><li>先找一個最大匹配，補成邊覆蓋。 M + M + V - 2M = V</li></ul></aside></section><!DOCTYPE html><section><h3>二分圖的特性</h3><p>\( M(G) = C_v(G) \)</p><p class="fragment">把點覆蓋轉成 min-cut ！</p><p class="fragment">很不一樣的是這次在 s 表示 (v in X and 不選 v) or (v in Y and 選 v)</p><div class="blackboard"></div><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">從構造的思路開始，要 u -> v 不能同時不選 = 不選 v 就要選 u</script></aside></section></section>
+</div></div>
+<script src="js/jquery.js"></script><script src="reveal/lib/js/head.min.js"></script><script src="reveal/js/reveal.js"></script><script src="js/sketch.min.js"></script><script>// Full list of configuration options available at:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({
   controls: true,

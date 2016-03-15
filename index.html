@@ -1,4 +1,6 @@
-<!DOCTYPE html><html><head><meta charset="utf-8"><title>reveal.js教學示範</title><meta name="description" content="A framework for easily creating beautiful presentations using HTML"><meta name="author" content="Hakim El Hattab"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"><link rel="stylesheet" href="reveal/css/reveal.css"><link rel="stylesheet" href="reveal/css/theme/black.css" id="theme"><link rel="stylesheet" href="css/style.css"><!-- Code syntax highlighting -->
+<!DOCTYPE html><html>
+<head>
+<meta charset="utf-8"><title>reveal.js教學示範</title><meta name="description" content="A framework for easily creating beautiful presentations using HTML"><meta name="author" content="Hakim El Hattab"><meta name="apple-mobile-web-app-capable" content="yes"><meta name="apple-mobile-web-app-status-bar-style" content="black-translucent"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui"><link rel="stylesheet" href="reveal/css/reveal.css"><link rel="stylesheet" href="reveal/css/theme/black.css" id="theme"><link rel="stylesheet" href="css/style.css"><!-- Code syntax highlighting -->
 <link rel="stylesheet" href="reveal/lib/css/zenburn.css">
 <!-- Printing and PDF exports --><script>var link = document.createElement( 'link' );
 link.rel = 'stylesheet';
@@ -15,8 +17,6 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
   \newcommand{\str}[1]{\texttt{"#1"}}
 \)
 <!-- ... 這裡是註解文字 ... -->
-<!-- ... 上面那邊基本上看不懂沒關係，有看到"reveal.js教學示範"嗎?那邊是網頁的標籤 ... -->
-<!-- ... 只要會複製貼上就好了 ... -->
 <section><h1>reveal.js教學</h1><p><div class="small">南天門日月卦長</div></p></section>
 <section><!DOCTYPE html>
     <section data-markdown><script type="text/template">
@@ -24,11 +24,12 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         * 基礎
           - 複製別人的
           - 修改別人的
-          - 完成
         * 加東西
           - section
+          - markdown語法
           - 加code
           - 加圖片
+          - 加theorem
     </script></section><!DOCTYPE html>
     <section data-markdown><script type="text/template">
         ## 如果有時間的話
@@ -43,18 +44,137 @@ document.getElementsByTagName( 'head' )[0].appendChild( link );
         //放code的地方
         ```
     </script></section><!DOCTYPE html>
-    <section><h2>如果你很熟html的話</h2><ul><li class="fragment">就可以</li><li class="fragment">像這樣</li><li class="fragment">輸出文字</li></ul></section>
+    <section><h2>如果你很熟html的話</h2>
+        <ul>
+            <li class="fragment">就可以</li>
+            <li class="fragment">像這樣</li>
+            <li class="fragment">輸出文字</li>
+        </ul>
+    </section>
 </section>
 <section><!DOCTYPE html><section><h1>基礎</h1></section></section>
-<section><!DOCTYPE html><section><h1>Definition</h1></section><!DOCTYPE html><section><h2>可行流</h2><p>想像一下…</p><ul><li class="fragment">有水流通過的水管</li><li class="fragment">公路的車流</li><li class="fragment">網路</li><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul><li>水管：輸送自來水到你家</li><li>水流：從山上下來，洪水</li><li>公路：車子走高速公路</li><li>網路：送封包。</li></ul></script></aside></ul></section><!DOCTYPE html><section><p>這些東西都有這些特性</p><ul><li class="fragment">有流的上限</li><li class="fragment">不能囤積</li><li class="fragment">通常會有起點和終點。</li><li class="fragment">而我們會希望能傳輸越多越好！</li><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul><li>流的上限：河流暴漲 公路塞車 網速</li><li>不能囤：否則淹水 連環車禍 大家按F5</li><li>s/t: 山上流到山下 過年返鄉</li><li>越多：木冊線。</li></ul></script></aside></ul></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div>流量網路<hr>一個<b>s-t 網路流</b>是<ul><li class="fragment">一張圖 \( G = (V, E) \)</li><li class="fragment">每條邊上有一個非負的權重 \( c(u, v) \geq 0 \) 代表邊的流量上限 </li><li class="fragment">並且有二個特別的點， 源點 \( s \) 與 匯點 \( t \) 。</li></ul></div><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul> <li>來正式定義何謂 s-t cut</li><li>當然是一張圖</li><li>流量上限</li><li>起/終點</li></ul></script></aside></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div>可行流的定義<hr>一個<b> s-t 可行流</b>是一個函數 \( f : V \times V \mapsto \mathbb{R} \) 滿足以下兩個條件<ul><br><li class="fragment">流量限制 : 
-\( f(u, v) \leq c(u, v), \; \forall (u, v) \)<br><br></li><li class="fragment">流量對稱 : 
-\( f(u, v) = -f(v, u), \; \forall (u, v)\)<br><br></li><li class="fragment">流量守衡 : 
-對於所有 \( v \in V \setminus \{s, t\} \) ， 
-有 \(  \sum\limits_{u \in V} f(v, u) = 0  \)</li></ul><p class="fragment">而我們定義這個 s-t 流的<b>流量</b>為 \( \abs{f} = \sum_{v \in V} f(s, v) \)</p></div><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template"><ul> <li>流量上限</li><li>反方向流負的</li><li>不能囤積</li><li>流量就是出去多少</li></ul></script></aside></section><!DOCTYPE html><section><h3>Example</h3><img src="img/latex/flow-0-0.svg" class="x2"><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">這些是上限 ， 想像成前面提到的 網路等等。</script></aside></section><!DOCTYPE html><section><h3>Example</h3><img src="img/latex/flow-0-1.svg" class="x2"><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">算一下
-* 都沒有超過上限
-* 沒囤
-* 算流量
-講 s出 = t進</script></aside></section></section><section><!DOCTYPE html><section><h1>Max-Flow Algorithm</h1></section></section><section><!DOCTYPE html><section><h2>Want</h2><p>流量最大的一個流，也就是最大流！</p></section><!DOCTYPE html><section><h3>想法</h3><p>一點一點慢慢增加流量</p><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">增加容量，找「有空的水管」，有空就是還有多的容量  
+<section><!DOCTYPE html>
+    <section><h1>複製別人的</h1></section>
+    <!DOCTYPE html><section data-markdown><script type="text/template">
+        首先去[這個網站][]
+          [這個網站]: https://github.com/hakimel/reveal.js/ 
+        按下Download ZIP把檔案下載
+    </script></section>
+    <!DOCTYPE html><section data-markdown><script type="text/template">
+        沒意外的話你會看到這樣的東西
+        ![Alt text](img/reveal_io_github.jpg)
+    </script></section>
+    <section data-markdown><script type="text/template">
+        載完之後解壓縮，會看到裡面有一個index.html
+        
+        可以打開來看看
+    </script></section>
+    <section data-markdown><script type="text/template">
+        如果不想用官方版的也可以來改我的講義
+        
+        [連結在這邊][]
+          [連結在這邊]: https://github.com/jacky860226/reveal.js-try
+        也是一樣按下Download ZIP把檔案下載
+        
+        不過code醜醜的喔 我也是改別人的
+    </script></section>
+    <section><div class="theorem"><div class="label">小實驗</div>
+        肥料參了金坷垃 一袋能頂兩袋撒<hr>
+        我要金坷垃世界肥料都漲價<br>
+        <b>233333333</b>
+        <li class="fragment">你們想要幹神麼</li>
+    </div></section>
+    <section>
+        <h1>播個影片</h1>
+        <iframe data-autoplay width="420" height="345" src="https://www.youtube.com/embed/jfm6eGS7wVc"></iframe>
+    </section>
+</section>
+<section>
+    <section><h1>修改別人的</h1></section>
+    <section><h1>以下以官方版本做示範</h1><br>用notepad++把index.html打開</section>
+    <section data-markdown><script type="text/template">
+        第七行有個title
+        ```
+        <title>reveal.js – The HTML Presentation Framework</title>
+        ```
+        那是索引標籤顯示的東西，可以自己改改看
+        
+        像是改成**我要金坷垃**之類的
+        ```
+        <title>我要金坷垃</title>
+        ```
+    </script></section>
+    <section data-markdown><script type="text/template">
+        ## 運行結果
+        ![Alt text](img/try_title.jpg)
+    </script></section>
+    <section data-markdown><script type="text/template">
+        之後的第42行到第380行有個東西長這樣
+        ``` html
+        <div class="slides">
+        .
+        .
+        .   包了很多東西
+        .
+        .
+        </div>
+        ```
+        那是寫投影片的地方
+    </script></section>
+    <section data-markdown><script type="text/template">
+        雖然裡面有很多值得參考的寫法
+        
+        但因為時間的關係只會教一些簡單的
+        
+        之後回去有興趣的可以在看
+        
+        ## 所以把包在他裡面的東西全部砍掉吧
+    </script></section>
+</section>
+ <section><h1>加東西</h1></section>
+<section>
+    <section><h1>section</h1></section>
+    <section data-markdown><script type="text/template">
+        ## section
+         * 基本上每個畫面是一個section
+         * 製作可以利用上下鍵控制的畫面可以利用雙層section
+         * section最多只有兩層
+    </script></section>
+    <section data-markdown><script type="text/template">
+        基本語法
+        ```
+        <section>
+            <!-- 裡面可以寫html -->
+        </section>
+        ```
+    </script></section>
+    <section>
+        雙層結構<br>
+        <pre><code class="html">
+&lt;section&gt;
+    &lt;h1&gt;我要金坷垃&lt;/h1&gt;
+&lt;/section&gt;
+&lt;section&gt;
+    &lt;section data-markdown&gt;&lt;script type="text/template"&gt;
+        來試試markdown語法吧
+        
+        比html簡單喔
+        
+        主要會教這個
+    &lt;/script&gt;&lt;/section&gt;
+    &lt;section&gt;
+        &lt;h2&gt;如果你很熟html的話&lt;/h2&gt;
+        &lt;ul&gt;
+            &lt;li class="fragment"&gt;就可以&lt;/li&gt;
+            &lt;li class="fragment"&gt;像這樣&lt;/li&gt;
+            &lt;li class="fragment"&gt;輸出文字&lt;/li&gt;
+        &lt;/ul&gt;
+    &lt;/section&gt;
+&lt;/section&gt;
+        </code></pre>
+    </section>
+</section>
+<section><!DOCTYPE html><section><h1>Max-Flow Algorithm</h1></section></section><section><!DOCTYPE html><section><h2>Want</h2><p>流量最大的一個流，也就是最大流！</p></section><!DOCTYPE html><section><h3>想法</h3><p>一點一點慢慢增加流量</p><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">增加容量，找「有空的水管」，有空就是還有多的容量  
 找到後應該可以增加一點
 </script></aside></section><!DOCTYPE html><section><img src="img/latex/flow1-0.svg" class="x2 space-right"><img width="40%" src="img/latex/flow1-1.svg" class="fragment"><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">這是一開始的狀況，把所有可以流的抓出來</script></aside></section><!DOCTYPE html><section><p>問：可以增加多少流量？</p><img width="80%" src="img/latex/flow1-2.svg"><img width="80%" src="img/latex/flow1-3.svg" class="fragment"><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">瓶頸會是最小的一條！</script></aside></section><!DOCTYPE html><section><img src="img/latex/flow2-0.svg" class="x2 space-right"><img width="40%" src="img/latex/flow2-1.svg" class="fragment"><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">圖上那條不見了.</script></aside></section><!DOCTYPE html><section><p>直到有一天流不了。</p><img src="img/latex/flow3-0.svg" class="x2 space-right"><img width="40%" src="img/latex/flow3-1.svg" class="fragment"><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">s 走不到 t</script></aside></section><!DOCTYPE html><section><p>Question: 這樣是否就是一個最大流？</p><p class="fragment">Answer: No!</p></section><!DOCTYPE html><section><img src="img/latex/flowzz-0.svg" class="x3 space-right"><img src="img/latex/flowzz-1.svg" class="x3 fragment space-right"><img src="img/latex/flowzz-2.svg" class="x3 fragment"><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">很簡單的反例, 最大流 2
 綠色是流的邊，這些都不能再流了。
@@ -333,7 +453,9 @@ sum 1 = 選 v 不選 u 就 1 cost
 流量下界 \( c^-(u, v) \)，求一個合法的流(不需最大)。
 </div><div class="blackboard"></div></section><!DOCTYPE html><section><p class="fragment">不如先補滿下界。</p><p class="fragment">但有些點的流量就不守恆了，進來的跟出來的差了 \( \delta(v) \)。</p><p class="fragment">有沒有想到混合圖的歐拉回路那一題！</p><div class="blackboard"></div></section><!DOCTYPE html><section><h2>一些和匹配相關的問題</h2><ul><li class="space-bottom fragment">最大獨立點集：一個最大的點集 \( V' \) 使得裡面的點都不相鄰。其大小記做 \( I(G) \)。</li><li class="space-bottom fragment">最大匹配數：前面定義過了。其大小記做 \( M(G) \)。</li><li class="space-bottom fragment">最小點覆蓋：最小的一個點集，使得所有的邊都至少與點集裡的一個點相鄰。其大小記做 \( C_v(G) \)。</li><li class="space-bottom fragment">最小邊覆蓋：最小的一個邊集，使得所有的點都至少與邊集裡的
 一個邊相鄰。其大小記做 \( C_e(G) \)。</li></ul><aside class="notes"><ul> <li>互不衝突的點。</li><li>很像壓紙。</li></ul></aside></section><!DOCTYPE html><section><div class="space-right inline-block x3"><img src="img/misc/match_probs-0.svg">獨立點集</div><div class="space-right inline-block x3"><img src="img/misc/match_probs-1.svg">點覆蓋</div><div class="space-right inline-block x3"><img src="img/misc/match_probs-2.svg">邊覆蓋</div></section><!DOCTYPE html><section><div class="theorem"><div class="label">定理</div><hr><ul><li>\( I(G) + C_v(G) = \abs{V} \). </li><li>\( M(G) + C_e(G) = \abs{V} \).</li><li>對連通二分圖，有 \( M(G) = C_v(G), I(G) = C_e(G) \).</li></ul></div><div class="blackboard"></div><aside class="notes"><ul> <li>點覆蓋的補集就是獨立點集。</li><li>先找一個最大匹配，補成邊覆蓋。 M + M + V - 2M = V</li></ul></aside></section><!DOCTYPE html><section><h3>二分圖的特性</h3><p>\( M(G) = C_v(G) \)</p><p class="fragment">把點覆蓋轉成 min-cut ！</p><p class="fragment">很不一樣的是這次在 s 表示 (v in X and 不選 v) or (v in Y and 選 v)</p><div class="blackboard"></div><!DOCTYPE html><aside data-markdown class="notes"><script type="text/template">從構造的思路開始，要 u -> v 不能同時不選 = 不選 v 就要選 u</script></aside></section></section>
-</div></div>
+</div>
+<!--結束了-->
+</div>
 <script src="js/jquery.js"></script><script src="reveal/lib/js/head.min.js"></script><script src="reveal/js/reveal.js"></script><script src="js/sketch.min.js"></script><script>// Full list of configuration options available at:
 // https://github.com/hakimel/reveal.js#configuration
 Reveal.initialize({

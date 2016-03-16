@@ -40,6 +40,70 @@
                     <p><div class="small">南天門日月卦長</div></p>
                 </section>
                 <section>
+                    <section><h1>自我介紹</h1></section>
+                    <section data-markdown>
+                        1. **對資料結構有一種執著**
+                        
+                        1. 尤其是**平衡樹**
+                        
+                        1. 喜歡吃很多東西
+                        
+                        1. 會咬人
+                        
+                        1. 會叫
+                    </section>
+                    <section><h1>比賽經歷</h1></section>
+                    <section data-markdown>
+                        * 高中
+                          - 個人賽
+                            - 桃竹苗資訊學科能力競賽 第三名
+                            - 資訊科全國賽佳作
+                            - TOI資訊奧林匹亞選訓營1!
+                          - 團體賽
+                            - 國際青少年程式設計競賽 冠軍(其實只有4個國家)
+                            - hp CodeWars 冠軍
+                            - 成大暑期高中生程式設計邀請賽 冠軍
+                        * 大學
+                          - 團體賽
+                            - 全國大專電腦軟體設計競賽甲組 十幾名的樣子
+                            - ACM ICPC 越南賽區 三等獎
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            ## 日月卦長的模板庫
+                            裡面放了各種C++演算法資料結構的模板
+                            
+                            專門為比賽寫得所以code都很短
+                            
+                            <http://sunmoon-template.blogspot.tw/>
+                        </script>
+                    </section>
+                </section>
+                <section>
+                    <section><h1>reveal.js</h1></section>
+                    <section>
+                        <h2>那是什麼?</h2>
+                        <ul>
+                            <li class="fragment">一種很好的投影片系統</li>
+                            <li class="fragment">HTML5的架構</li>
+                            <li class="fragment">支援Markdown語法</li>
+                            <li class="fragment">大家都被PowerPoint之類的東西養壞了</li>
+                            <li class="fragment">先來看個影片</li>
+                        </ul>
+                    </section>
+                    <section><h1>不好的投影片</h1></section>
+                    <section>
+                        <iframe data-autoplay width="840" height="690" src="https://www.youtube.com/embed/YIZDZ78fGWk"></iframe>
+                    </section>
+                    <section data-markdown>
+                        <script type="text/template">
+                            影片網址:
+                            
+                            <https://www.youtube.com/watch?v=YIZDZ78fGWk&feature=youtu.be>
+                        </script>
+                    </section>
+                </section>
+                <section>
                     <section data-markdown>
                         <script type="text/template">
                             ## 大綱
@@ -70,14 +134,6 @@
                             //放code的地方
                             ```
                         </script>
-                    </section>
-                    <section>
-                        <h2>如果你很熟html的話</h2>
-                        <ul>
-                            <li class="fragment">就可以</li>
-                            <li class="fragment">像這樣</li>
-                            <li class="fragment">輸出文字</li>
-                        </ul>
                     </section>
                 </section>
                 <section><h1>基礎</h1></section>
@@ -192,13 +248,15 @@
     &lt;h1&gt;我要金坷垃&lt;/h1&gt;
 &lt;/section&gt;
 &lt;section&gt;
-    &lt;section data-markdown&gt;&lt;script type="text/template"&gt;
-        來試試markdown語法吧
-        
-        比html簡單喔
-        
-        主要會教這個
-    &lt;/script&gt;&lt;/section&gt;
+    &lt;section data-markdown&gt;
+        &lt;script type="text/template"&gt;
+            來試試markdown語法吧
+            
+            比html簡單喔
+            
+            主要會教這個
+        &lt;/script&gt;
+    &lt;/section&gt;
     &lt;section&gt;
         &lt;h2&gt;如果你很熟html的話&lt;/h2&gt;
         &lt;ul&gt;
@@ -216,7 +274,11 @@
                     <section data-background="img/ss16100.jpg" >
                         換個背景圖片
                         <pre><code class="html">&lt;section data-background="img/ss16100.jpg"&gt;&lt;/section&gt;</code></pre>
-                        <li class="fragment"><font color="black"style="background-color:white">記得要先有img資料夾跟ss16100.jpg這個檔案喔</font></li>
+                        <ul>
+                            <li class="fragment">
+                                <font color="black"style="background-color:white">記得要先有img資料夾跟ss16100.jpg這個檔案喔</font>
+                            </li>
+                        </ul>
                     </section>
                 </section>
                 <section>
@@ -394,6 +456,12 @@
                             這是google:<https://www.google.com.tw/>
                             
                                 這是google:<https://www.google.com.tw/>
+                            有時候沒有出現連結的話就用這東西把它包起來
+<pre><code class="html">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+        東西寫這裡
+    &lt;/script&gt;
+&lt;/section&gt;</code></pre>
                         </script>
                     </section>
                     <section data-markdown>
@@ -429,6 +497,7 @@
         東西寫這裡
     &lt;/script&gt;
 &lt;/section&gt;</code></pre>
+                        如果有些東西無法執行的話也可能是缺少這個東西的關係
                     </section>
                     <section data-markdown>
                         <script type="text/template">
@@ -460,8 +529,8 @@
                         用<br>
                         <b>```</b><br>
                         <b>```</b><br>
-                <pre><code class="cpp">int a=5;
-                a++;</code></pre>
+<pre><code class="cpp">int a=5;
+a++;</code></pre>
                 code如下<br>
 <pre><code class="markdown">``` cpp
 int a=5;
@@ -547,10 +616,9 @@ int main(){
                     </section>
                 </section>
                 <!--結束了-->
+                
             </div>
         </div>
-
-
         <script src="js/jquery.js"></script>
         <script src="reveal/lib/js/head.min.js"></script>
         <script src="reveal/js/reveal.js"></script>

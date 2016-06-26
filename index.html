@@ -24,7 +24,8 @@
     </head>
     <body>
         <div class="reveal">
-            <div class="slides">\( 
+            <div class="slides">
+			\( 
               \newcommand{\ord}[1]{\mathcal{O}\left(#1\right)}
               \newcommand{\abs}[1]{\lvert #1 \rvert}
               \newcommand{\floor}[1]{\lfloor #1 \rfloor}
@@ -127,11 +128,11 @@
                     <section data-markdown>
                         <script type="text/template">
                             寫個 ``code``
-                            ``` cpp
-                            int a;
-                            for(int i=0;i<10;++i)
-                                a+=5;
-                            //放code的地方
+                            ``` py
+                            a = 0
+                            for i in range(10):
+                                a += 5
+                            #放code的地方
                             ```
                         </script>
                     </section>
@@ -237,7 +238,7 @@
                     <section data-markdown>
                         <script type="text/template">
                             基本語法
-                            ```
+                            ``` html
                             <section>
                                 <!-- 裡面可以寫html -->
                             </section>
@@ -289,15 +290,13 @@
                         ## 這東西在這麼短的時間教是教不完的
                         ## 想更進一步學習的可以來看[這個網站](http://markdown.tw/)
                     </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                            使用Markdown語法
-                            ``` html
-                            <section data-markdown>
-                                ## 寫在這裡
-                            </section>
-                            ```
-                        </script>
+					<section>
+                        使用Markdown語法<br>
+<pre><code class="html">&lt;section data-markdown&gt;
+    &lt;script type="text/template"&gt;
+        東西寫這裡
+    &lt;/script&gt;
+&lt;/section&gt;</code></pre>
                     </section>
                 </section>
                 <section>
@@ -447,6 +446,13 @@
                             ```
                         </script>
                     </section>
+					<section data-markdown>
+                        <script type="text/template">
+                            ## 換行
+                            也可以用html的```<br/>```來換行<br/>
+							這是下一行
+                        </script>
+                    </section>
                     <section data-markdown>
                         <script type="text/template">
                             ## 超連結
@@ -492,15 +498,6 @@
                 </section>
                 <section>
                     <section data-markdown># 加code</section>
-                    <section>
-                        再用markdown語法加code前必須要先在section包個script<br>
-<pre><code class="html">&lt;section data-markdown&gt;
-    &lt;script type="text/template"&gt;
-        東西寫這裡
-    &lt;/script&gt;
-&lt;/section&gt;</code></pre>
-                        如果有些東西無法執行的話也可能是缺少這個東西的關係
-                    </section>
                     <section data-markdown>
                         <script type="text/template">
                             最簡單的方法，縮排一下就行了
@@ -636,6 +633,26 @@ int main(){
     &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
                     </section>
+					<section>
+                        <h2>加problem</h2>
+                        <div class="prob">
+                            <div class="label">定理</div>
+                            肥料參了金坷垃 一袋能頂兩袋撒<hr>
+                            <b>我要金坷垃世界肥料都漲價</b><br>
+                            <ul>
+                                <li class="fragment">你們想要幹神麼</li>
+                            </ul>
+                        </div>
+<pre><code class="html">&lt;h2&gt;還是要用html語法&lt;/h2&gt;
+&lt;div class="prob"&gt;
+    &lt;div class="label"&gt;定理&lt;/div&gt;
+    肥料參了金坷垃 一袋能頂兩袋撒&lt;hr&gt;
+    &lt;b&gt;我要金坷垃世界肥料都漲價&lt;/b&gt;&lt;br&gt;
+    &lt;ul&gt;
+        &lt;li class="fragment"&gt;你們想要幹神麼&lt;/li&gt;
+    &lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+                    </section>
                     <section data-markdown>
                         <script type="text/template">
                             ## 怎麼長的不一樣?
@@ -660,6 +677,32 @@ int main(){
                         </script>
                     </section>
                 </section>
+				<section>
+					<section><h1>latex</h1></section>
+					<section data-markdown>
+						<script type="text/template">
+							## reveal.js支援使用latex語法
+							``` tex
+							$$
+							z_e = z_u + z_v - w(e)+\sum_{
+								\begin{subarray}{l}
+									B \in O \\ u,v \in \gamma(B)
+								\end{subarray}
+							} z_B
+							$$
+							```
+						</script>
+					</section>
+					<section>
+						$$
+						z_e = z_u + z_v - w(e)+\sum_{
+							\begin{subarray}{l}
+								B \in O \\ u,v \in \gamma(B)
+							\end{subarray}
+						} z_B
+						$$
+					</section>
+				</section>
                 <section>
                     <section><h1>金坷垃</h1></section>
                     <section>

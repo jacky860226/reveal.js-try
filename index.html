@@ -143,7 +143,7 @@
                     <section data-markdown>
                         <script type="text/template">
                             首先去[這個網站][]
-                              [這個網站]: https://github.com/hakimel/reveal.js/ "reveal.js"
+                              [這個網站]: https://github.com/jacky860226/reveal.js-template "reveal.js template"
                             按下Download ZIP把檔案下載
                         </script>
                     </section>
@@ -160,26 +160,13 @@
                             可以打開來看看
                         </script>
                     </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                            如果不想用官方版的也可以來改我的講義
-                            
-                            [連結在這邊](https://github.com/jacky860226/reveal.js-try "reveal.js-try")
-                            
-                            就算不想改我的的話也先下載，有東西會用到
-                            
-                            也是一樣按下Download ZIP把檔案下載
-                            
-                            不過code醜醜的喔 我也是改別人的
-                        </script>
-                    </section>
                 </section>
                 <section>
                     <section><h1>修改別人的</h1></section>
                     <section><h1>以下以官方版本做示範</h1><br>用notepad++把index.html打開</section>
                     <section data-markdown>
                         <script type="text/template">
-                            第七行有個title
+                            第五行有個title
                             ```
                             <title>reveal.js – The HTML Presentation Framework</title>
                             ```
@@ -199,15 +186,15 @@
                     </section>
                     <section data-markdown>
                         <script type="text/template">
-                            之後的第42行到第378行有個東西長這樣
+                            之後的第38行到第373行有個東西長這樣
                             ``` html
-                            <div class="slides">
+                            <!-- ... 開始寫code ... -->
                             .
                             .
                             .   包了很多東西
                             .
                             .
-                            </div>
+                            <!--結束了-->
                             ```
                             那是寫投影片的地方
                         </script>
@@ -449,7 +436,7 @@
 					<section data-markdown>
                         <script type="text/template">
                             ## 換行
-                            也可以用html的```<br/>```來換行<br/>
+                            也可以用html的```<br>```來換行<br>
 							這是下一行
                         </script>
                     </section>
@@ -464,12 +451,6 @@
                             這是google:<https://www.google.com.tw/>
                             
                                 這是google:<https://www.google.com.tw/>
-                            有時候沒有出現連結的話就用這東西把它包起來
-<pre><code class="html">&lt;section data-markdown&gt;
-    &lt;script type="text/template"&gt;
-        東西寫這裡
-    &lt;/script&gt;
-&lt;/section&gt;</code></pre>
                         </script>
                     </section>
                     <section data-markdown>
@@ -504,17 +485,19 @@
                             
                             記住要空四格
                             
-                            
                                 a = 5
-                                a += 1
+                                for i in range(10):
+                                    a += 5
                             
                             code如下:
                             
                                 最簡單的方法，縮排一下就行了
                                 
                                 記住要空四格
+								
                                     a = 5
-                                    a += 1
+                                    for i in range(10):
+                                        a += 5
                         </script>
                     </section>
                     <section data-markdown>
@@ -529,42 +512,52 @@
                         <b>```</b><br>
                         <b>```</b><br>
 <pre><code class="py">a = 5
-a += 1</code></pre>
+for i in range(10):
+    a += 5</code></pre>
                 code如下<br>
 <pre><code class="markdown">``` py
 a = 5
-a += 1
+for i in range(10):
+    a += 5
 ```</code></pre>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
                             ## 方法三 用html
-                            這個方法比較難就交給html組的人來教吧
-                            
-                            通常在要顯示html code的時候會用到
-                            
+                            這個方法比較難就交給html組的人來教吧<br>
+                            通常在要顯示html code的時候會用到<br>
                             這裡稍微講一下
                             
-<pre><code class="html">&lt;pre&gt;&lt;code class="cpp"&gt;#include&amp;lt;bits/stdc++.h&amp;gt;
-using namespace std;
-int main(){
-    puts("我要金坷垃");
-    return 0;
-}
-&lt;/code&gt;&lt;/pre&gt;</code></pre>
+<pre><code class="html">&lt;pre&gt;&lt;code class="html"&gt;&amp;lt;!DOCTYPE html&amp;gt;
+&amp;lt;html&amp;gt;
+    &amp;lt;head&amp;gt;
+        &amp;lt;meta charset="utf-8"&amp;gt;
+        &amp;lt;title&amp;gt;我的第一個網頁&amp;lt;/title&gt;
+    &amp;lt;/head&amp;gt;
+    &amp;lt;body&amp;gt;
+        &amp;lt;!-- 註解 --&amp;gt;
+        &amp;lt;h1&amp;gt;標題&amp;lt;/h1&amp;gt;
+        &amp;lt;p&amp;gt;段落&amp;lt;/p&amp;gt;
+    &amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;&lt;/code&gt;&lt;/pre&gt;</code></pre>
                         </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
                             ## 方法三 用html
                             執行的結果
-<pre><code class="cpp">#include&lt;bits/stdc++.h&gt;
-using namespace std;
-int main(){
-    puts("我要金坷垃");
-    return 0;
-}
-                </code></pre>
+<pre><code class="html">&lt;!DOCTYPE html&gt;
+&lt;html&gt;
+    &lt;head&gt;
+        &lt;meta charset="utf-8"&gt;
+        &lt;title&gt;我的第一個網頁&lt;/title>
+    &lt;/head&gt;
+    &lt;body&gt;
+        &lt;!-- 註解 --&gt;
+        &lt;h1&gt;標題&lt;/h1&gt;
+        &lt;p&gt;段落&lt;/p&gt;
+    &lt;/body&gt;
+&lt;/html&gt;</code></pre>
                         </script>
                     </section>
                 </section>
@@ -577,38 +570,10 @@ int main(){
                         <pre><code class="html">&lt;iframe data-autoplay width="420" height="345" src="https://www.youtube.com/embed/jfm6eGS7wVc"&gt;&lt;/iframe&gt;</code></pre>
                     </section>
                     <section data-markdown>
-                        ## 修改YouTube影片的網址
-                        一般的YouTube影片網址是不能用的
-                        
-                        要進行修改
-                        
-                        假設原來長這樣:
-                         
-                        https://www.youtube.com/watch?v=jfm6eGS7wVc
-                        
-                        修改之後:
-                        
-                        https://www.youtube.com/embed/jfm6eGS7wVc
-                    </section>
-                    <section>
-                        <h2>音樂</h2>
-                        <audio controls LOOP="true" name="JKL">
-                            <source src="http://pc2.tfcis.org/lfs/20140830/egg.mp3">
-                        </audio>
-                        <br>
-                        一些語法可以玩玩看
-<pre><code class="html">&lt;audio controls hidden="true" autoplay="true" LOOP="true" name="JKL"&gt;
-    &lt;source src="http://pc2.tfcis.org/lfs/20140830/egg.mp3"&gt;
-&lt;/audio&gt;</code></pre>
-                    </section>
-                    <section data-markdown>
-                        ## 參數說明
-                        <ul>
-                            autoplay 自動播放(整個網頁都會播喔)<br>
-                            LOOP 循環播放<br>
-                            name 名稱(不一定要有啦)<br>
-                            hidden 是否隱藏<br>
-                        </ul>
+                        ## 複製嵌入程式碼
+                        在Youtube影片上面按右鍵會出現 **複製嵌入程式碼** 的按鈕<br>
+						按下去就可以直接得到前一頁的code<br>
+						![複製嵌入程式碼](img/copy_embed_code.png "複製嵌入程式碼")
                     </section>
                 </section>
                 <section>
@@ -652,17 +617,6 @@ int main(){
         &lt;li class="fragment"&gt;你們想要幹神麼&lt;/li&gt;
     &lt;/ul&gt;
 &lt;/div&gt;</code></pre>
-                    </section>
-                    <section data-markdown>
-                        <script type="text/template">
-                            ## 怎麼長的不一樣?
-                            我的投影片有個資料夾**css**<br>
-                            裡面有個檔案叫**style.css**把它複製到你投影片的**css**資料夾<br>
-                            在&lt;head&gt;加入以下code:
-                            ``` html
-                            <link rel="stylesheet" href="css/style.css">
-                            ```
-                        </script>
                     </section>
                     <section data-markdown>
                         <script type="text/template">
